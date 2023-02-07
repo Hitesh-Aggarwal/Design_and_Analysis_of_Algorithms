@@ -44,12 +44,6 @@ void take_input(int *arr) {
   }
 }
 
-void print_array(int *arr, int n) {
-  for (int i = 0; i < n; i++)
-    cout << arr[i] << " ";
-  cout << endl;
-}
-
 void delete_elt(int *arr, int val) {
   int i;
   for (i = 0; i < n; i++) {
@@ -79,7 +73,6 @@ int main(int argc, char *argv[]) {
   take_input(arr);
   merge_sort(arr, 0, n - 1);
   while (n > 2) {
-    print_array(arr, n);
     int med_size = (n % 2 == 0) ? ((n / 2) * (n / 2 - 1))
                                 : (((n - 1) / 2) * ((n - 1) / 2));
     int *medians = new int[med_size];
@@ -90,7 +83,6 @@ int main(int argc, char *argv[]) {
         medians[k++] = med;
       }
     }
-    print_array(medians, med_size);
     int min = find_min(medians, med_size);
     delete_elt(arr, medians[min]);
     delete[] medians;
