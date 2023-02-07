@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+#define N 10
+
 void merge(int arr[], int low, int mid, int high) {
   int temp[high - low + 1];
   int k = 0, i = low, j = mid + 1;
@@ -29,13 +31,12 @@ void merge_sort(int arr[], int low, int high) {
 }
 
 int main() {
-  int n = 10;
-  int arr[n];
-  for (int i = 0; i < n; i++)
-    arr[i] = n - i;
+  int arr[N];
+  for (int i = 0; i < N; i++)
+    arr[i] = N - i;
 
-  merge_sort(arr, 0, n - 1);
-  for (int i = 0; i < n; i++)
+  merge_sort(arr, 0, N - 1);
+  for (int i = 0; i < N; i++)
     cout << arr[i] << " ";
   cout << endl;
   return 0;

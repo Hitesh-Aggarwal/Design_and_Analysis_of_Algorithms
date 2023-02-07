@@ -2,6 +2,8 @@
 #include <limits.h>
 using namespace std;
 
+#define N 10
+
 void max_subarray_brute_force(int arr[], int n, int *i, int *j, int *max_sum) {
   for (int p = 0; p < n; p++) {
     int sum = arr[p];
@@ -71,13 +73,12 @@ void printArray(int *arr, int n) {
 }
 
 int main(int argc, char *argv[]) {
-  int n = 10;
-  int arr[n] = {25, -30, 64, -50, 2, 53, 3, -20,13,32};
-  printArray(arr, n);
-  int i = 0, j = n - 1, max_sum = INT_MIN;
+  int arr[N] = {25, -30, 64, -50, 2, 53, 3, -20,13,32};
+  printArray(arr, N);
+  int i = 0, j = N - 1, max_sum = INT_MIN;
   // max_subarray_brute_force(arr, n, &i, &j, &max_sum);
   // cout << i << " " << j << " " << max_sum << endl;
-  max_subarray_divide_and_conquer(arr, 0, n - 1, &i, &j, &max_sum);
+  max_subarray_divide_and_conquer(arr, 0, N - 1, &i, &j, &max_sum);
   cout << i << " " << j << " " << max_sum << endl;
   return 0;
 }

@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+#define N 10
+
 int pivot(int arr[], int low, int high) {
   int i = low - 1;
   int temp;
@@ -41,12 +43,11 @@ void quick_sort(int arr[], int n) {
 }
 
 int main(int argc, char *argv[]) {
-  int n = 10;
-  int arr[n];
-  for (int i = 0; i < n; i++)
-    arr[i] = n - i;
-  quick_sort(arr, n);
-  for (int i = 0; i < n; i++)
+  int arr[N];
+  for (int i = 0; i < N; i++)
+    arr[i] = N - i;
+  quick_sort(arr, N);
+  for (int i = 0; i < N; i++)
     cout << arr[i] << " ";
   cout << endl;
   return 0;
