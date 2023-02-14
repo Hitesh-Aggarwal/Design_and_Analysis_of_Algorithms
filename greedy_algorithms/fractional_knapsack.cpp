@@ -58,7 +58,7 @@ void find_solution(item arr[], item solution[], int *n, float *profit) {
   }
 }
 
-int main(int argc, char *argv[]) {
+int main() {
   int n = 0; // number of items in solution
   float profit=0;
   item arr[N] = {{1, 10, 2}, {2, 8, 4}, {3,18, 6},

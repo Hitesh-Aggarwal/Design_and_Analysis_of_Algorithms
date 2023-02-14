@@ -41,7 +41,7 @@ void solve(activity *arr, activity *sol, int *n) {
   }
 }
 
-int main(int argc, char *argv[]) {
+int main() {
   int n; // number of activities in solution
   activity arr[N] = {{1, 0, 4}, {2, 2, 3},   {3, 4, 9},
                      {4, 7, 8}, {5, 10, 16}, {6, 13, 14}};
