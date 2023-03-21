@@ -17,11 +17,11 @@ void fill_knapsack(item *items, int *C) {
     C[w] = 0;
   for (int i = 1; i <= N; i++) {
     for (int w = 1; w <= CAP; w++) {
-      if (items[i-1].weight <= w) {
-        if (items[i-1].value + C[(i - 1) * (CAP + 1) + (w - items[i-1].weight)] >
+      if (items[i - 1].weight <= w) {
+        if (items[i - 1].value + C[(i - 1) * (CAP + 1) + (w - items[i - 1].weight)] >
             C[(i - 1) * (CAP + 1) + w])
           C[i * (CAP + 1) + w] =
-              items[i-1].value + C[(i - 1) * (CAP + 1) + (w - items[i-1].weight)];
+              items[i - 1].value + C[(i - 1) * (CAP + 1) + (w - items[i - 1].weight)];
         else
           C[i * (CAP + 1) + w] = C[(i - 1) * (CAP + 1) + w];
       } else
@@ -36,8 +36,8 @@ void print_solution(item *items) {
   int i = N, k = CAP;
   while (i > 0 && k > 0) {
     if (C[i][k] != C[i - 1][k]) {
-      cout << items[i-1].id << " ";
-      k = k - items[i-1].weight;
+      cout << items[i - 1].id << " ";
+      k = k - items[i - 1].weight;
       i = i - 1;
     } else
       i = i - 1;

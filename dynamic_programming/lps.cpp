@@ -51,7 +51,6 @@ int main(int argc, char *argv[]) {
   char str[N] = "psychologist";
   palindrome(str);
   print_solution(str, 0, N - 1);
-  cout << "\nLength of longest palindrome: " << X[0][N-1] << endl;
+  cout << "\nLength of longest palindrome: " << X[0][N - 1] << endl;
   return 0;
 }
-

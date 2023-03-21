@@ -13,8 +13,7 @@ void printActivities(activity *arr, int n) {
   cout << endl << "Activities:" << endl;
   cout << "ID\tStart\tFinish\n";
   for (int i = 0; i < n; i++)
-    cout << arr[i].id << "\t" << arr[i].startime << "\t" << arr[i].finishtime
-         << endl;
+    cout << arr[i].id << "\t" << arr[i].startime << "\t" << arr[i].finishtime << endl;
 }
 
 void insertion_sort(activity *arr) {
@@ -34,7 +33,7 @@ void solve(activity *arr, activity *sol, int *n) {
   *n = 0;
   int f = 0;
   for (int i = 0; i < N; i++) {
-    if (arr[i].startime >= f){
+    if (arr[i].startime >= f) {
       sol[(*n)++] = arr[i];
       f = arr[i].finishtime;
     }
@@ -43,8 +42,7 @@ void solve(activity *arr, activity *sol, int *n) {
 
 int main() {
   int n; // number of activities in solution
-  activity arr[N] = {{1, 0, 4}, {2, 2, 3},   {3, 4, 9},
-                     {4, 7, 8}, {5, 10, 16}, {6, 13, 14}};
+  activity arr[N] = {{1, 0, 4}, {2, 2, 3}, {3, 4, 9}, {4, 7, 8}, {5, 10, 16}, {6, 13, 14}};
   activity *sol = new activity[N];
   insertion_sort(arr);
   printActivities(arr, N);

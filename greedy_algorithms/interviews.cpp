@@ -33,8 +33,7 @@ void insertion_sort(Candidate *list) {
 
 void printCandidates(Candidate *list) {
   for (int i = 0; i < N; i++)
-    cout << list[i].id << "\t" << list[i].start_time << "\t" << list[i].end_time
-         << endl;
+    cout << list[i].id << "\t" << list[i].start_time << "\t" << list[i].end_time << endl;
 }
 
 void create_new_interviewer(Interviewer *list, int n) {
@@ -43,9 +42,8 @@ void create_new_interviewer(Interviewer *list, int n) {
   list[n].list = new Candidate[N];
 }
 
-void assignCandidates(Candidate *c_list,
-                      Interviewer *i_list,
-                      int *n) { // n is number of interviewrs
+// n is number of interviewrs
+void assignCandidates(Candidate *c_list, Interviewer *i_list, int *n) {
   insertion_sort(c_list);
   create_new_interviewer(i_list, 0);
   i_list[0].list[i_list[0].n] = c_list[0];
@@ -61,11 +59,9 @@ void assignCandidates(Candidate *c_list,
     min = 0;
     flag = 0;
     for (int j = 0; j < (*n); j++) { // loop through interviewrs list
-      if (cur.start_time >=
-          i_list[j].list[i_list[j].n - 1].end_time) { // Interviewer is free
+      if (cur.start_time >= i_list[j].list[i_list[j].n - 1].end_time) { // Interviewer is free
         flag = 1;
-        if (i_list[min].n > i_list[j].n)
-          min = j;
+        if (i_list[min].n > i_list[j].n) min = j;
       }
     }
     if (flag == 1) {
@@ -91,8 +87,7 @@ void printInterviews(Interviewer *list, int n) {
 }
 
 int main(int argc, char *argv[]) {
-  Candidate candidates[N] = {
-      {1, 5, 9}, {2, 1, 2}, {3, 3, 4}, {4, 0, 6}, {5, 5, 7}, {6, 8, 9}};
+  Candidate candidates[N] = {{1, 5, 9}, {2, 1, 2}, {3, 3, 4}, {4, 0, 6}, {5, 5, 7}, {6, 8, 9}};
   Interviewer list[N];
   int n = 0;
   assignCandidates(candidates, list, &n);

@@ -24,8 +24,7 @@ void insertion_sort(Job *arr) {
 void SequenceJobs(Job *A) {
   int n = 0;
   for (int i = 0; i < N; i++)
-    if (A[i].deadline > n)
-      n = A[i].deadline;
+    if (A[i].deadline > n) n = A[i].deadline;
   insertion_sort(A);
   Job *B = new Job[n];
   Job temp;
@@ -38,8 +37,7 @@ void SequenceJobs(Job *A) {
     if (temp.deadline <= n) {
       while (j >= 0 && B[j].deadline != -1)
         j--;
-      if (j >= 0)
-        B[j] = temp;
+      if (j >= 0) B[j] = temp;
     }
   }
   for (int i = 0; i < n; i++)
@@ -48,7 +46,7 @@ void SequenceJobs(Job *A) {
 }
 
 int main() {
-  Job A[N] = {{100,2}, {19,1}, {27,2}, {25,1}, {15,3}};
+  Job A[N] = {{100, 2}, {19, 1}, {27, 2}, {25, 1}, {15, 3}};
   SequenceJobs(A);
   return 0;
 }

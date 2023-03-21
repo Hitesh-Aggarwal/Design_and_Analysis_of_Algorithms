@@ -24,8 +24,7 @@ void merge(int arr[], int low, int mid, int high) {
 void merge_sort(int arr[], int n) {
   int right_end = n - 1;
   for (int size = 1; size <= n / 2; size *= 2) {
-    for (int left_end = 0; left_end < n - (2 * size - 1);
-         left_end += 2 * size) {
+    for (int left_end = 0; left_end < n - (2 * size - 1); left_end += 2 * size) {
       right_end = left_end + 2 * size - 1;
       int mid = left_end + (right_end - left_end) / 2;
       cout << left_end << "\t" << right_end << "\t" << mid << endl;

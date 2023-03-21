@@ -47,8 +47,7 @@ void take_input(int *arr) {
 void delete_elt(int *arr, int val) {
   int i;
   for (i = 0; i < n; i++) {
-    if (arr[i] == val)
-      break;
+    if (arr[i] == val) break;
   }
   if (i < n) {
     for (int j = i; j < n; j++)
@@ -60,8 +59,7 @@ void delete_elt(int *arr, int val) {
 int find_min(int *arr, int size) {
   int min = 0;
   for (int i = 0; i < size; i++)
-    if (arr[min] > arr[i])
-      min = i;
+    if (arr[min] > arr[i]) min = i;
   return min;
 }
 
@@ -73,8 +71,7 @@ int main(int argc, char *argv[]) {
   take_input(arr);
   merge_sort(arr, 0, n - 1);
   while (n > 2) {
-    int med_size = (n % 2 == 0) ? ((n / 2) * (n / 2 - 1))
-                                : (((n - 1) / 2) * ((n - 1) / 2));
+    int med_size = (n % 2 == 0) ? ((n / 2) * (n / 2 - 1)) : (((n - 1) / 2) * ((n - 1) / 2));
     int *medians = new int[med_size];
     int k = 0;
     for (int size = 3; size <= n; size += 2) {

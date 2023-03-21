@@ -21,8 +21,8 @@ void fill_arrays(int *coins, int *C, int *S) {
 void print_sol(int *coins) {
   int C[GOAL + 1], S[GOAL + 1];
   fill_arrays(coins, C, S);
-  int i=GOAL;
-  while (i > 0){
+  int i = GOAL;
+  while (i > 0) {
     cout << S[i] << " ";
     i = i - S[i];
   }

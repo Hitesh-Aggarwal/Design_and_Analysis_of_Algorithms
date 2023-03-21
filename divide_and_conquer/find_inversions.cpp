@@ -11,7 +11,7 @@ void merge(int arr[], int low, int mid, int high) {
   while (i <= mid && j <= high) {
     if (arr[i] <= arr[j])
       temp[k++] = arr[i++];
-    else{
+    else {
       temp[k++] = arr[j++];
       inv_count = inv_count + mid - i + 1;
     }
@@ -46,4 +46,3 @@ int main() {
   cout << inv_count << endl;
   return 0;
 }
-

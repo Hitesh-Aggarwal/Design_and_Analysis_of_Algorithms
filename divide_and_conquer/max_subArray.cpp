@@ -18,8 +18,7 @@ void max_subarray_brute_force(int arr[], int n, int *i, int *j, int *max_sum) {
   }
 }
 
-void cross_sum(int arr[], int low, int mid, int high, int *i, int *j,
-               int *max_sum) {
+void cross_sum(int arr[], int low, int mid, int high, int *i, int *j, int *max_sum) {
   int left_sum_max = INT_MIN;
   int right_sum_max = INT_MIN;
   int left_sum = 0;
@@ -50,8 +49,7 @@ void cross_sum(int arr[], int low, int mid, int high, int *i, int *j,
   }
 }
 
-void max_subarray_divide_and_conquer(int arr[], int low, int high, int *i,
-                                     int *j, int *max_sum) {
+void max_subarray_divide_and_conquer(int arr[], int low, int high, int *i, int *j, int *max_sum) {
   if (low == high) {
     if (arr[low] > *max_sum) {
       *max_sum = arr[low];
@@ -73,7 +71,7 @@ void printArray(int *arr, int n) {
 }
 
 int main(int argc, char *argv[]) {
-  int arr[N] = {25, -30, 64, -50, 2, 53, 3, -20,13,32};
+  int arr[N] = {25, -30, 64, -50, 2, 53, 3, -20, 13, 32};
   printArray(arr, N);
   int i = 0, j = N - 1, max_sum = INT_MIN;
   // max_subarray_brute_force(arr, n, &i, &j, &max_sum);

@@ -19,8 +19,7 @@ public:
   int get_size() { return size; }
 
   char *printStack() {
-    if (size <= 0)
-      return NULL;
+    if (size <= 0) return NULL;
     char *str = new char[size];
     for (int i = 0; i < size; i++)
       str[i] = (arr[i] == 0) ? '0' : '1';
@@ -57,11 +56,9 @@ public:
     int l = left(i);
     int r = right(i);
     int min;
-    if (l >= size)
-      return; // leaf node
+    if (l >= size) return; // leaf node
     if (r >= size)
-      if (arr[i]->freq < arr[l]->freq)
-        min = i;
+      if (arr[i]->freq < arr[l]->freq) min = i;
     if (arr[i]->freq < arr[l]->freq && arr[i]->freq < arr[r]->freq)
       min = i;
     else if (arr[l]->freq < arr[i]->freq && arr[l]->freq < arr[r]->freq)
@@ -183,14 +180,10 @@ void generateCodes(node *root, int *total, char **codes) {
 }
 
 void delete_tree(node *root) {
-  if (!root)
-    return;
-  if (root->left)
-    delete_tree(root->left);
-  if (root->right)
-    delete_tree(root->right);
-  if (root->left == NULL && root->right == NULL)
-    delete root;
+  if (!root) return;
+  if (root->left) delete_tree(root->left);
+  if (root->right) delete_tree(root->right);
+  if (root->left == NULL && root->right == NULL) delete root;
 }
 
 void append(char *a, char *b, int *size_a) {
