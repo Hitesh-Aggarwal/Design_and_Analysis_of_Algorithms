@@ -1,1 +1,1 @@
-# This repo contains C++ code for various algorithms.
+Contains code for various algorithms.
